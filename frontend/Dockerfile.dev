@@ -1,0 +1,16 @@
+FROM node:lts-slim AS development
+
+WORKDIR /react-app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+ 
+RUN npm install 
+
+COPY . .
+
+# This would be overriden by the docker-compose file
+EXPOSE 8080 
+
+# This would be overriden by the docker-compose file
+CMD ["npm", "run", "dev"]
