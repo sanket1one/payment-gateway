@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  frontend:
+    container_name: frontend-container
+    image: frontend-dev-image
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/react-app
+      - /react-app/node_modules #isolate node_modules folder
+    command: npm run dev
+    environment:
+      - NODE_ENV=development
