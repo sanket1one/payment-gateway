@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Load environment variables from .env
-export $(grep -v '^#' .env | xargs)
+# # Load environment variables from .env
+# export $(grep -v '^#' .env | xargs)
 
 # Activate the virtual environment
 source .venv/bin/activate  
